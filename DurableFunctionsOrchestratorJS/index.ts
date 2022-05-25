@@ -12,18 +12,14 @@
 import * as df from 'durable-functions';
 
 const orchestrator = df.orchestrator(function* (context) {
-  const outputs = [];
+  context.log.info('------------------------> ORCHESTRATOR START');
+  let x = yield context.df.callActivity('SleepActivity', 8000);
+  context.log.info(`1 waited ${x}`);
+  x = yield context.df.callActivity('SleepActivity', 8000);
+  context.log.info(`2 waited ${x}`);
+  context.log.info('------------------------> ORCHESTRATOR END');
 
-  context.log('------------------------> ORCHESTRATOR START');
-
-  outputs.push(yield context.df.callActivity('HelloActivity', 'Tokyo'));
-  outputs.push(yield context.df.callActivity('HelloActivity', 'Seattle'));
-  outputs.push(yield context.df.callActivity('HelloActivity', 'London'));
-
-  context.log('------------------------> ORCHESTRATOR END');
-
-  // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
-  return outputs;
+  return 'out';
 });
 
 export default orchestrator;

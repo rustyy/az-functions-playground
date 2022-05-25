@@ -1,0 +1,10 @@
+{
+  "bindings": [
+    {
+      "name": "wait",
+      "type": "activityTrigger",
+      "direction": "in"
+    }
+  ],
+  "scriptFile": "../dist/SleepActivity/index.js"
+}
