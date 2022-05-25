@@ -1,0 +1,19 @@
+= azure playground
+
+== Working with Azure Function Core Tools
+
+Reference:
+
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-core-tools-reference?tabs=v2
+
+.Create a function project
+[source,bash]
+----
+func init MyProject
+----
+
+.Create a function with function core tools
+[source,bash]
+----
+func new
+----
