@@ -9,7 +9,9 @@
     "start:host": "func start",
     "start": "npm-run-all --parallel start:host watch",
     "test": "echo \"No tests yet...\"",
-    "azurite": "azurite --silent --location ./azurite --debug ./azurite/debug.log"
+    "azurite": "azurite --silent --location ./azurite --debug ./azurite/debug.log",
+    "azurite:clean": "npx rimraf './azurite/!(.gitkeep)'",
+    "clean": "npx rimraf '**/node_modules' './azurite/!(.gitkeep)' ./dist"
   },
   "description": "",
   "devDependencies": {
