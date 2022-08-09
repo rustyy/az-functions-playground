@@ -44,3 +44,7 @@ __pycache__/
 
 azurite/*
 !azurite/.gitkeep
+
+.idea/aws.xml
+.idea/azure
+.idea/sonarlint
